@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application name="">	
+<general>	
+		<prompts>
+		<prompt name="play" text="PLAY" page="page1" voice=""/>	
+		<prompt name="question" text="Which is greater?" page="page1" voice=""/>
+		<prompt name="optionA" text="OPTION A" page="page1" voice=""/>
+		<prompt name="optionB" text="OPTION B" page="page1" voice=""/>
+		<prompt name="bothEqual" text="BOTH ARE EQUAL" page="page1" voice=""/>	
+		<prompt name="help" text="Help" page="page1" voice=""/>	
+		<prompt name="correct" text="Correct!" page="page1" voice=""/>
+		<prompt name="incorrect" text="Oops! That is incorrect!" page="page1" voice=""/>
+		<prompt name="ok" text="OK" page="page1" voice=""/>	
+
+		<prompt name="helpCoinInstruction" text="This is your coin balance. You lose 100 coins on answering wrongly. You win 500 coins on answering correctly. You lose 50 coins on opening each door.&lt;b&gt; So, try to open least number of doors possible and identify the greater of the two decimal numbers. &lt;/b&gt;" page="page1" voice=""/>	
+
+		<prompt name="doorClickInstruction" text="‌Digits of two decimal numbers are hidden behind doors. Click on a door to see the digit behind it. Find the bigger number by opening the least number of doors possible." page="page1" voice=""/>	
+
+		<prompt name="selectAnswerInstruction" text="Compare the two decimals and select the correct answer." page="page1" voice=""/>
+
+		<prompt name="level" text="LEVEL #currentLevel#" page="page1" voice=""/>	
+
+		<prompt name="credits" text="Developed by Mindspark team based on the research by Dr. Kaye Stacey and collaborators, The University of Melbourne, Australia." page="page1" voice=""/>	
+
+		<prompt name="game_over" text="GAME OVER" page="page1" voice=""/>		
+		</prompts>
+		
+		<miscellaneous>
+		<!-- English Text Word -->
+		</miscellaneous>
+		<images>
+		<!-- English Image Text Word -->
+		</images>
+		<sounds>
+		</sounds>
+	</general>
+</application>
