@@ -233,7 +233,7 @@ questionInteractive.prototype.startScreen = function()
 
 	htmlContent = '<div id="mainScreenStart">';
 	htmlContent += '<div id="GameTitle"></div>';
-	htmlContent += '<div id="GamePlayButton" class="highlight" onclick="interactiveObj.start()">'+promptArr["play"]+'</div>';
+	htmlContent += '<div id="GamePlayButton" class="highlight" onclick="interactiveObj.start()">'+'PLAY'+'</div>';
 	htmlContent += '</div>';
 
 	$("#container").html(htmlContent); ///work
@@ -277,8 +277,8 @@ questionInteractive.prototype.createBaseDivs = function()
 	htmlContent += '<div id="mainDiv">';
 
 	htmlContent += '<div id="askQuestion">'; //show question
-	htmlContent += '<div id="helpButton">'+promptArr["help"]+'</div>';
-	htmlContent += '<div id="questionArea">'+promptArr["question"]+'</div>';
+	htmlContent += '<div id="helpButton">'+'HELP'+'</div>';
+	htmlContent += '<div id="questionArea">'+'Which is greater?'+'</div>';
 	htmlContent += '<div id="moneyArea">';
 	htmlContent += '<div id="coinImage"></div>';
 	htmlContent += '<div id="showBalance">'+balanceCoins+'</div>';
@@ -288,7 +288,7 @@ questionInteractive.prototype.createBaseDivs = function()
 	htmlContent += '<div id="questionDiv">'; //question div
 	
 	htmlContent += '<div id="optionA" class="optionRows">'; //option A div
-	htmlContent += '<div id="optionALabel" class="optionRowsLabels"><div id="optionALabelText" class="optionRowsLabelText">'+promptArr["optionA"]+'</div></div>'; 
+	htmlContent += '<div id="optionALabel" class="optionRowsLabels"><div id="optionALabelText" class="optionRowsLabelText">'+'OPTION A'+'</div></div>'; 
 	htmlContent += '<div id="row0" class="numberRows">';
 	for(var i=0;i<7;i++)
 	{
@@ -301,7 +301,7 @@ questionInteractive.prototype.createBaseDivs = function()
 
 
 	htmlContent += '<div id="optionB" class="optionRows">'; //option B div
-	htmlContent += '<div id="optionBLabel" class="optionRowsLabels"><div id="optionBLabelText" class="optionRowsLabelText">'+promptArr["optionB"]+'</div></div>'; 
+	htmlContent += '<div id="optionBLabel" class="optionRowsLabels"><div id="optionBLabelText" class="optionRowsLabelText">'+'OPTION B'+'</div></div>'; 
 	htmlContent += '<div id="row1" class="numberRows">';
 	for(var i=0;i<7;i++)
 	{
@@ -317,9 +317,9 @@ questionInteractive.prototype.createBaseDivs = function()
 
 
 	htmlContent += '<div id="answerDiv">';
-	htmlContent += '<div id="topNumber" class="answerButtons" onclick="interactiveObj.evaluateAnswer(0)">'+promptArr["optionA"]+'</div>';
-	htmlContent += '<div id="equalNumber" class="answerButtons" onclick="interactiveObj.evaluateAnswer(2)">'+promptArr["bothEqual"]+'</div>';
-	htmlContent += '<div id="bottomNumber" class="answerButtons" onclick="interactiveObj.evaluateAnswer(1)">'+promptArr["optionB"]+'</div>';
+	htmlContent += '<div id="topNumber" class="answerButtons" onclick="interactiveObj.evaluateAnswer(0)">'+'OPTION A'+'</div>';
+	htmlContent += '<div id="equalNumber" class="answerButtons" onclick="interactiveObj.evaluateAnswer(2)">'+'BOTH ARE EQUAL'+'</div>';
+	htmlContent += '<div id="bottomNumber" class="answerButtons" onclick="interactiveObj.evaluateAnswer(1)">'+'OPTION B'+'</div>';
 	htmlContent += '</div>';
 
 	htmlContent += '</div>';
@@ -328,7 +328,7 @@ questionInteractive.prototype.createBaseDivs = function()
 
 	htmlContent += '<div id="coinToAnimate"></div>';
 
-	htmlContent += '<div id="credits">'+promptArr["credits"]+'</div>';
+	htmlContent += '<div id="credits">'+'Developed by Mindspark team based on the research by Dr. Kaye Stacey and collaborators, The University of Melbourne, Australia.'+'</div>';
 
 	$("#container").html(htmlContent);
 
@@ -606,7 +606,7 @@ questionInteractive.prototype.createLevels = function()
 questionInteractive.prototype.showLevel = function()
 {
 	var levelScreenTime = 3000; 
-	var levelText = replaceDynamicText(promptArr["level"], interactiveObj.language, "");
+	var levelText = replaceDynamicText('LEVEL #currentLevel#', interactiveObj.language, "");
 
 	$("#mainDivLevels").css({"visibility":"visible"});
 	$("#mainDivLevels").html(levelText);
@@ -626,13 +626,13 @@ questionInteractive.prototype.createRemedial = function()
 	htmlContent += '<div id="remedialDiv" style="visibility:hidden;">';
 
 	htmlContent += '<div id="askQuestionRemedial">'; //show question
-	htmlContent += '<div id="questionAreaRemedial">'+promptArr["question"]+'</div>';
+	htmlContent += '<div id="questionAreaRemedial">'+'Which is greater?'+'</div>';
 	htmlContent += '</div>';// show question
 
 	htmlContent += '<div id="questionDivRemedial">'; //question div
 	
 	htmlContent += '<div id="optionARemedial" class="optionRowsRemedial">'; //option A div
-	htmlContent += '<div id="optionALabelRemedial" class="optionRowsLabelsRemedial"><div id="optionALabelTextRemedial" class="optionRowsLabelTextRemedial">'+promptArr["optionA"]+'</div></div>'; 
+	htmlContent += '<div id="optionALabelRemedial" class="optionRowsLabelsRemedial"><div id="optionALabelTextRemedial" class="optionRowsLabelTextRemedial">'+'OPTION A'+'</div></div>'; 
 	htmlContent += '<div id="row0Remedial" class="numberRows">';
 	for(var i=0;i<7;i++)
 	{
@@ -645,7 +645,7 @@ questionInteractive.prototype.createRemedial = function()
 
 
 	htmlContent += '<div id="optionBRemedial" class="optionRowsRemedial">'; //option B div
-	htmlContent += '<div id="optionBLabelRemedial" class="optionRowsLabelsRemedial"><div id="optionBLabelTextRemedial" class="optionRowsLabelTextRemedial">'+promptArr["optionB"]+'</div></div>'; 
+	htmlContent += '<div id="optionBLabelRemedial" class="optionRowsLabelsRemedial"><div id="optionBLabelTextRemedial" class="optionRowsLabelTextRemedial">'+'OPTION B'+'</div></div>'; 
 	htmlContent += '<div id="row1Remedial" class="numberRowsRemedial">';
 	for(var i=0;i<7;i++)
 	{
@@ -661,15 +661,15 @@ questionInteractive.prototype.createRemedial = function()
 
 
 	htmlContent += '<div id="answerDivRemedial">';
-	htmlContent += '<div id="topNumberRemedial" class="answerButtonsRemedial" onclick="interactiveObj.evaluateRemedialAnswer(0)">'+promptArr["optionA"]+'</div>';
-	htmlContent += '<div id="equalNumberRemedial" class="answerButtonsRemedial" onclick="interactiveObj.evaluateRemedialAnswer(2)">'+promptArr["bothEqual"]+'</div>';
-	htmlContent += '<div id="bottomNumberRemedial" class="answerButtonsRemedial" onclick="interactiveObj.evaluateRemedialAnswer(1)">'+promptArr["optionB"]+'</div>';
+	htmlContent += '<div id="topNumberRemedial" class="answerButtonsRemedial" onclick="interactiveObj.evaluateRemedialAnswer(0)">'+'OPTION A'+'</div>';
+	htmlContent += '<div id="equalNumberRemedial" class="answerButtonsRemedial" onclick="interactiveObj.evaluateRemedialAnswer(2)">'+'BOTH ARE EQUAL'+'</div>';
+	htmlContent += '<div id="bottomNumberRemedial" class="answerButtonsRemedial" onclick="interactiveObj.evaluateRemedialAnswer(1)">'+'OPTION B'+'</div>';
 	htmlContent += '</div>';
 
 	htmlContent += '<div id="displayRemedialAnswer" style="visibility:hidden">';
 	htmlContent += '<div id="displayRemedialAnswerBox">';
 	htmlContent += '<div id="displayRemedialAnswerText"></div>';
-	htmlContent += '<div id="okButtonRemedialAnswer" onclick="interactiveObj.getOutOfRemedial();">'+promptArr["ok"]+'</div>';
+	htmlContent += '<div id="okButtonRemedialAnswer" onclick="interactiveObj.getOutOfRemedial();">'+'OK'+'</div>';
 	htmlContent += '</div>';
 	htmlContent += '</div>';
 
@@ -784,13 +784,13 @@ questionInteractive.prototype.evaluateRemedialAnswer = function(pStudentAnswerRe
 	if(pStudentAnswerRemedial == correctAnswerRow)
 	{
 		console.log("Correct Answer!");
-		answerText = promptArr["correct"];
+		answerText = 'Correct!';
 		divColor = '#31f018';
 	}
 	else
 	{
 		console.log("Incorrect");	
-		answerText = promptArr["incorrect"];
+		answerText = 'Oops! That is incorrect!';
 		divColor = 'red';
 	}	
 
@@ -836,7 +836,7 @@ questionInteractive.prototype.createHelp = function()
 
 	htmlContent += '<div id="askQuestionHelp">'; //show question
 	htmlContent += '<div id="closeButtonHelp" onclick="interactiveObj.exitHelp();">X</div>';
-	htmlContent += '<div id="questionAreaHelp">'+promptArr["question"]+'</div>';
+	htmlContent += '<div id="questionAreaHelp">'+'Which is greater?'+'</div>';
 	htmlContent += '<div id="moneyAreaHelp">';
 	htmlContent += '<div id="coinImageHelp"></div>';
 	htmlContent += '<div id="showBalanceHelp">'+balanceCoins+'</div>';
@@ -846,7 +846,7 @@ questionInteractive.prototype.createHelp = function()
 	htmlContent += '<div id="questionDivHelp">'; //question div
 	
 	htmlContent += '<div id="optionAHelp" class="optionRowsHelp">'; //option A div
-	htmlContent += '<div id="optionALabelHelp" class="optionRowsLabelsHelp"><div id="optionALabelTextHelp" class="optionRowsLabelTextHelp">'+promptArr["optionA"]+'</div></div>'; 
+	htmlContent += '<div id="optionALabelHelp" class="optionRowsLabelsHelp"><div id="optionALabelTextHelp" class="optionRowsLabelTextHelp">'+'OPTION A'+'</div></div>'; 
 	htmlContent += '<div id="row0Help" class="numberRowsHelp">';
 	for(var i=0;i<7;i++)
 	{
@@ -859,7 +859,7 @@ questionInteractive.prototype.createHelp = function()
 
 
 	htmlContent += '<div id="optionBHelp" class="optionRowsHelp">'; //option B div
-	htmlContent += '<div id="optionBLabelHelp" class="optionRowsLabelsHelp"><div id="optionBLabelTextHelp" class="optionRowsLabelTextHelp">'+promptArr["optionB"]+'</div></div>'; 
+	htmlContent += '<div id="optionBLabelHelp" class="optionRowsLabelsHelp"><div id="optionBLabelTextHelp" class="optionRowsLabelTextHelp">'+'OPTION B'+'</div></div>'; 
 	htmlContent += '<div id="row1Help" class="numberRowsHelp">';
 	for(var i=0;i<7;i++)
 	{
@@ -875,14 +875,14 @@ questionInteractive.prototype.createHelp = function()
 
 
 	htmlContent += '<div id="answerDivHelp">';
-	htmlContent += '<div id="topNumberHelp" class="answerButtonsHelp">'+promptArr["optionA"]+'</div>';
-	htmlContent += '<div id="equalNumberHelp" class="answerButtonsHelp">'+promptArr["bothEqual"]+'</div>';
-	htmlContent += '<div id="bottomNumberHelp" class="answerButtonsHelp">'+promptArr["optionB"]+'</div>';
+	htmlContent += '<div id="topNumberHelp" class="answerButtonsHelp">'+'OPTION A'+'</div>';
+	htmlContent += '<div id="equalNumberHelp" class="answerButtonsHelp">'+'BOTH ARE EQUAL'+'</div>';
+	htmlContent += '<div id="bottomNumberHelp" class="answerButtonsHelp">'+'OPTION B'+'</div>';
 	htmlContent += '</div>';
 
 	htmlContent += '<div id="textDivHelp">';
 	htmlContent += '<div id="textDivHelpText"></div>';
-	htmlContent += '<div id="okButtonTextDivHelp">'+promptArr["ok"]+'</div>';
+	htmlContent += '<div id="okButtonTextDivHelp">'+'OK'+'</div>';
 	htmlContent += '</div>';
 
 	htmlContent += '</div>';
@@ -921,7 +921,7 @@ questionInteractive.prototype.helpAnimation1 = function()
 	setTimeout(function() {
 		$("#textDivHelp").css({"visibility":"visible", "left":helpDivLeftPos+"px", "top":helpDivTopPos+"px"});
 		// $("#textDivHelpText").html(promptArr["helpCoinInstruction"]);
-		$("#textDivHelpText").html(promptArr["doorClickInstruction"]);
+		$("#textDivHelpText").html('Digits of two decimal numbers are hidden behind doors. Click on a door to see the digit behind it. Find the bigger number by opening the least number of doors possible.');
 
 		$("#okButtonTextDivHelp").click(interactiveObj.helpAnimation2);
 		$("#row_0_door_0Help").addClass("doorsHelp");
@@ -967,7 +967,7 @@ questionInteractive.prototype.helpAnimation2 = function()
 	$("#moneyAreaHelp, .doorsHelp, .optionRowScaffoldingHelp, .optionRowsLabelTextHelp").css({"opacity":"0.1"});
 	$("#moneyAreaHelp").css({"opacity":"1"});
 
-	$("#textDivHelpText").html(promptArr["helpCoinInstruction"]);
+	$("#textDivHelpText").html('This is your coin balance. You lose 100 coins on answering wrongly. You win 500 coins on answering correctly. You lose 50 coins on opening each door.&lt;b&gt; So, try to open least number of doors possible and identify the greater of the two decimal numbers. &lt;/b&gt;');
 
 	$("#okButtonTextDivHelp").click(interactiveObj.helpAnimation3);
 
@@ -1012,7 +1012,7 @@ questionInteractive.prototype.helpAnimation3 = function()
 	$("#questionDivHelp").css({"opacity":"0.1"});
 	$("#answerDivHelp").css({"opacity":"1"});
 
-	$("#textDivHelpText").html(promptArr["selectAnswerInstruction"]);
+	$("#textDivHelpText").html('Compare the two decimals and select the correct answer.');
 
 	$("#okButtonTextDivHelp").click(interactiveObj.exitHelp);
 
@@ -1043,5 +1043,5 @@ questionInteractive.prototype.gameOver = function()
     $(".doors").prop("onclick", null).off("click"); //remove onclick
     $(".answerButtons").prop("onclick", null).off("click"); //remove onclick
     $("#mainDiv").css({"font-size":"75px", "font-weight":"bold", "color":"white"});
-    $("#mainDiv").html(promptArr["game_over"]);	
+    $("#mainDiv").html('GAME OVER');	
 }
