@@ -275,7 +275,6 @@ questionInteractive.prototype.createBaseDivs = function()
 
 	/////////////////////////////// NEW UI ///////////////////////////////////////////////////
 	htmlContent += '<div id="mainDiv">';
-
 	htmlContent += '<div id="askQuestion">'; //show question
 	htmlContent += '<div id="helpButton">'+'HELP'+'</div>';
 	htmlContent += '<div id="questionArea">'+'Which is greater?'+'</div>';
@@ -510,14 +509,26 @@ questionInteractive.prototype.openDoor = function(pId)
 		// }, 200);
 	}, coinAnimtionTime+100);
 
+	var doorStartLeftPos = $("#"+pId+"_doorImage").offset().left;
+	var doorStarteTopPos = $("#"+pId+"_doorImage").offset().top;
 
-	var coinStartLeftPos = $("#coinImage").offset().left;
-	var coinStarteTopPos = $("#coinImage").offset().top;
+	console.log("doortLeftPos: ",doorStartLeftPos)
+	console.log("doorStarteTopPos: ",doorStarteTopPos)
+
+	var coinStartLeftPos = $("#coinImage").offset().left - $("#container").offset().left;
+	var coinStarteTopPos = $("#coinImage").offset().top - $("#container").offset().top;
+
+	console.log("coinStartLeftPos: ",coinStartLeftPos)
+	console.log("coinStarteTopPos: ",coinStarteTopPos)
 
 	$("#coinToAnimate").css({"left":coinStartLeftPos+"px", "top":coinStarteTopPos+"px", "visibility":"visible"});
 
-	var coinEndLeftPos = $("#"+pId).offset().left;
-	var coinEndTopPos = $("#"+pId).offset().top;
+	// var coinEndLeftPos = $("#"+pId).offset().left;
+	// var coinEndTopPos = $("#"+pId).offset().top;
+	var coinEndLeftPos = $("#"+pId+"_doorImage").offset().left - $("#container").offset().left;
+	var coinEndTopPos = $("#"+pId+"_doorImage").offset().top - $("#container").offset().top;
+	console.log("coinEndLeftPos: ",coinEndLeftPos)
+	console.log("coinEndTopPos: ",coinEndTopPos)
 	$("#coinToAnimate").animate({left:coinEndLeftPos+"px", top:coinEndTopPos+"px"}, coinAnimtionTime);	
 
 	setTimeout(function(){ 
@@ -543,13 +554,14 @@ questionInteractive.prototype.showCoinAnimation = function(pIsCorrect)
 		$("#"+correctRow[correctAnswerRow]).css({"background":"#34f230", "border-color":"transparent transparent #008000 transparent"}); //Correct answer green
 
 
-		var coinStartLeftPos = $("#"+correctRow[correctAnswerRow]).offset().left;
-		var coinStarteTopPos = $("#"+correctRow[correctAnswerRow]).offset().top;
+		var coinStartLeftPos = $("#"+correctRow[correctAnswerRow]).offset().left - $("#container").offset().left;
+		var coinStarteTopPos = $("#"+correctRow[correctAnswerRow]).offset().top - $("#container").offset().top;
+
 
 		$("#coinToAnimate").css({"left":coinStartLeftPos+"px", "top":coinStarteTopPos+"px", "visibility":"visible"});
 
-		var coinEndLeftPos = $("#coinImage").offset().left;
-		var coinEndTopPos = $("#coinImage").offset().top;
+		var coinEndLeftPos = $("#coinImage").offset().left - $("#container").offset().left;
+		var coinEndTopPos = $("#coinImage").offset().top - $("#container").offset().top;
 		$("#coinToAnimate").animate({left:coinEndLeftPos+"px", top:coinEndTopPos+"px"}, animationTime);	
 
 		setTimeout(function(){ 
@@ -566,13 +578,13 @@ questionInteractive.prototype.showCoinAnimation = function(pIsCorrect)
 		$("#"+correctRow[correctAnswerRow]).css({"background":"#34f230", "border-color":"transparent transparent #008000 transparent"}); // Correct answer green
 
 
-		var coinStartLeftPos = $("#coinImage").offset().left;
-		var coinStarteTopPos = $("#coinImage").offset().top;
+		var coinStartLeftPos = $("#coinImage").offset().left - $("#container").offset().left;
+		var coinStarteTopPos = $("#coinImage").offset().top - $("#container").offset().top;
 
 		$("#coinToAnimate").css({"left":coinStartLeftPos+"px", "top":coinStarteTopPos+"px", "visibility":"visible"});
 
-		var coinEndLeftPos = $("#"+correctRow[correctAnswerRow]).offset().left;
-		var coinEndTopPos = $("#"+correctRow[correctAnswerRow]).offset().top;
+		var coinEndLeftPos = $("#"+correctRow[correctAnswerRow]).offset().left - $("#container").offset().left;
+		var coinEndTopPos = $("#"+correctRow[correctAnswerRow]).offset().top - $("#container").offset().top; 
 
 		$("#coinToAnimate").animate({left:coinEndLeftPos+"px", top:coinEndTopPos+"px"}, animationTime);	
 
